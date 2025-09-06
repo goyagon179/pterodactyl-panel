@@ -12,6 +12,7 @@ on:
   release:
     types:
       - published
+  workflow_dispatch: {}
 
 jobs:
   push:
@@ -29,7 +30,7 @@ jobs:
         id: docker_meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/pterodactyl/panel
+          images: ghcr.io/${{ github.repository_owner }}/panel
           flavor: |
             latest=false
           tags: |
